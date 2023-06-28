@@ -1,0 +1,36 @@
+/* TextItem.module.css */
+.textItem {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+  }
+  
+  .textItem span {
+    cursor: pointer;
+  }
+  
+  .editable {
+    border: none;
+    background-color: transparent;
+    width: 80%;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .icon {
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  
+  .iconOptionsHide {
+    display: none;
+  }
+  
+  .iconOptionsShow {
+    display: flex;
+  }
+  

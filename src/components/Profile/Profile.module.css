@@ -1,0 +1,26 @@
+.profile{
+    height: 36px;
+    width: 100px;
+    background: #6965db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.unauth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    margin-left: .5rem;
+}
+.authPic{
+    height: 36px;
+    width: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+}

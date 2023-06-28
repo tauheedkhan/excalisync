@@ -1,0 +1,43 @@
+{
+	"name": "excalidrawsync",
+	"version": "1.0.0",
+	"description": "excalidrawsync - Sync your files to google drive",
+	"manifest_version": 3,
+	"incognito": "split",
+	"icons": {
+		"128": "assets/icons/icon.png"
+	},
+	"action": {
+		"default_icon": "assets/icons/icon.png",
+		"default_popup": "index.html"
+	},
+	"background": {
+		"service_worker": "scripts/background.js",
+		"type": "module"
+	},
+	"permissions": [
+		"identity"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"http://localhost:5000/*"
+			],
+			"js": [
+				"scripts/external-integration.js"
+			],
+			"run_at": "document_idle"
+		}
+	],
+	"host_permissions": [
+		"http://localhost"
+	],
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3Clz//OSGH4niYkVSbECf62BtcDlpy7PR9FYyHE7V/rVAn92tAUcqHqGiQ2zvgnLrsbE2Sh7D38R+ekRN/g1gDcKwHswmRbyE6hxqWS6YGnKx/XgBEKs3w6/6dUBvv4bqJRjRUcykGuKa3ghlPVtHDs0wV4mHcw9ERXKjEUmj0Dj3EZbIfyfAAdcBHoaQBkNOzBGL0x0db3Hv6bOa8mQQT/FZ9v2UHHCCWfKjBEdvoojutynXiP8hggcz1mUpcE6ulQLZzZGMVdnYVs9ygHWfWMXKwg0JjL9QJt+hxIbxlAgBcl0ViETk4uImI2iPoV7aHrSmrBvLON2iT2gtGR3bQIDAQAB",
+	"oauth2": {
+		"client_id": "99974468132-j1jjgqtl39e8l3u2l5iru29dd5f0smcv.apps.googleusercontent.com",
+		"scopes": [
+			"https://www.googleapis.com/auth/drive.file",
+			"https://www.googleapis.com/auth/userinfo.email"
+		]
+	}
+}
