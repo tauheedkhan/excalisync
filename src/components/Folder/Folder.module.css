@@ -1,0 +1,56 @@
+.folder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e3e2fe;
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+  
+}
+
+.folder .folderControls {
+    display: none;
+}
+.folder:hover .folderControls {
+    display: flex;
+}
+.editable {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+  
+    padding-left: 5px;
+}
+.folderWrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:30px;
+   
+}
+.expanded{
+    border-bottom: 1px solid #e3e2fe;
+    padding-bottom: 5px;
+}
+.fileContainer{
+
+}
+
+.folderNameWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.folderName{
+    margin-left:5px;
+}
+.icon{
+    padding: 3px;
+}
+.icon:hover {
+background-color: #e3e2fe;
+border-radius: 5px;
+}

@@ -16,7 +16,9 @@
 		"type": "module"
 	},
 	"permissions": [
-		"identity"
+		"identity",
+		"storage",
+		"tabs"
 	],
 	"content_scripts": [
 		{

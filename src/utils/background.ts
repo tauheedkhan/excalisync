@@ -3,6 +3,9 @@ chrome.runtime.onInstalled.addListener(async () => {
   const tabs = await chrome.tabs.query({ url: ["http://localhost/*"] });
   tabs.forEach(({ id }) => chrome.tabs.reload(id));
 });
+let fileId;
+let folderId;
+let olderFileId;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log("called token ");
@@ -23,5 +26,26 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       }
     });
     return true; // Indicate that we will call sendResponse asynchronously
+  }
+  if (request.message === "context") {
+    olderFileId = fileId;
+    fileId = request.fileId;
+    folderId = request.folderId;
+    console.log("olderfileid ", olderFileId);
+    console.log("context changes ", folderId, fileId, request.reload);
+    if (olderFileId !== fileId) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.reload(tabs[0].id);
+      });
+    }
+  }
+});
+
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+    console.log(
+      `Storage key "${key}" in namespace "${namespace}" changed.`,
+      `Old value was "${oldValue}", new value is "${newValue}".`
+    );
   }
 });

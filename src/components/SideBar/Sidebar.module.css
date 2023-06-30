@@ -32,4 +32,44 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
+
+  .button {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px 20px;  /* adjust as needed */
+  background-color: transparent;
+  border: 2px dotted #9074EA;  /* color similar to Tailwind's 'blue-500' */
+  color: #9074EA;  /* same color as border */
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  font-family: Arial, sans-serif;  /* adjust as needed */
+  font-size: 16px;  /* adjust as needed */
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #9074EA;  /* on hover, button background becomes blue */
+  color: white;  /* and the text becomes white */
+}
+.userContainer{
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    height: 36px;
+    width: auto;
+    border-radius: 10px;
+}
+.logintext{
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    margin-left: 8px;
+}
+.email{
+    font-weight: bold;
+}
   
